@@ -1,0 +1,11 @@
+# jitpack.yml (直接复制)
+jdk:
+  - openjdk21
+
+before_install: |
+  source $HOME/.sdkman/bin/sdkman-init.sh
+  sdk install java 21.0.3-open < /dev/null
+  sdk default java 21.0.3-open
+  sdk use java 21.0.3-open
+  java -version
+  javac -version
