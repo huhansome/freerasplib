@@ -11,3 +11,8 @@ before_install: |
   java -version
   javac -version
 
+install:
+  # 1. 强制让 Gradle 去组装 talsec-core 的 AAR
+  - ./gradlew :talseccore:assemble
+  # 2. 正常执行你的发布流程
+  - ./gradlew publishToMavenLocal
