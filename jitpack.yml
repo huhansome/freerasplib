@@ -3,9 +3,11 @@ jdk:
   - openjdk21
 
 before_install: |
+  chmod +x gradlew  # 👈 补充这行，防止 JitPack 报错提示权限不足
   source $HOME/.sdkman/bin/sdkman-init.sh
   sdk install java 21.0.3-open < /dev/null
   sdk default java 21.0.3-open
   sdk use java 21.0.3-open
   java -version
   javac -version
+
